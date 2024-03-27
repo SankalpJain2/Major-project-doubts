@@ -8,11 +8,13 @@ const listingSchema = new Schema({
     },
     description: String,
     image:{
-        filename: String,
-        url: String,
-        type:String,
-        default:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mickeyshannon.com%2Fnature-photography-galleries%2F&psig=AOvVaw0nuPdN8Qz6YnTWF0TInbzo&ust=1711550543865000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODl59eUkoUDFQAAAAAdAAAAABAE",
-        set: (v)=>v ===""?"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mickeyshannon.com%2Fnature-photography-galleries%2F&psig=AOvVaw0nuPdN8Qz6YnTWF0TInbzo&ust=1711550543865000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODl59eUkoUDFQAAAAAdAAAAABAE" : v,
+        type: String,
+        default:
+          "https://images.unsplash.com/photo-1566908829550-e6551b00979b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        set: (v) =>
+          v === ""
+            ? "https://images.unsplash.com/photo-1566908829550-e6551b00979b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            : v,
     } , 
     price: Number,
     location: String,
